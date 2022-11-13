@@ -1,0 +1,119 @@
+{% extends 'Bootstrap/base.html' %}
+{% block content %}
+
+ 
+
+<img src="https://funkyimg.com/i/32PCG.png" alt="Trulli" width="1200" height="300" >
+
+    <div class = "container">
+         <div class = "jumbotron text-center">
+             <h2>Natural Language Processing Playground<h2>
+         </div>
+    </div>
+    
+    
+	<div class="container">
+    	<form action="{{url_for('sentanalyse')}}" method="post" id="myform">
+    	<textarea name="rawtext" rows="8" col="3" class="form-control">
+    	</textarea>
+    	<input type="submit" name="" value="Submit" class="btn btn-primary">
+    	<input type="reset" name="" value="Clear" class="btn btn-outline-primary">
+    	<a href="{{url_for('index')}}" type="button" class="btn btn-danger">Reset</a>
+		</form>
+	</div>
+
+  	
+
+	<div class="container">
+    	<div class="card">
+        <div>
+            <p style="font-size:18px">{{ received_text }}</p>
+        </div>
+    <div/>
+    
+    
+    <div class = "container">
+         <div class = "jumbotron text-center">
+             <h4>Showing Similar Historical Chats<h4>
+         </div>
+	</div>
+    
+    
+    <div class="card-body">
+        {% for i in summary %}
+        <li>{{i}}
+            <!--
+            <a href="https://www.dictionary.com/browse/{{i}}?s=t" target="blank_" type= "button" class="btn btn-primary"> View</a>
+            -->
+        </li>
+        {% endfor%}  
+    </div>
+    
+    <!--
+    <div class = "container">
+         <div class = "jumbotron text-center">
+             <h4>Classification<h4>
+         </div>
+	</div>
+   
+
+<head>
+<style>p.indent{ padding-top: 1.8em }</style>
+</head>
+ 
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+
+<table style="width:100%">
+  <tr>
+    <th>Assigned Category</th>
+    <th>Similarity Score</th> 
+  </tr>
+  <tr>
+    <td>{{cat}}</td>
+    <td>{{cat_score}}</td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+
+    <html>
+    <h2>Classification of a Batch Sample</h2>
+<title>Category Batch App</title>
+<body>
+
+<form action = "/batch" method="POST">
+</select>
+<p> Select Calling Date :<input name="day_of_week" type ="text" value="1" /> </p>
+
+<p> Select Key Word Tag :   
+<select name="category">
+<option value="AA - Account Opening">AA - Account Opening</option>
+<option value="AA - Balance">AA - Balance</option>
+<option value="AA - Device ID">AA - Device ID</option>
+<option value="AA - MoneyLink Activation">AA - MoneyLink Activation</option>
+<option value="MM - Required Minimum Distribution (RMD)">MM - Required Minimum Distribution (RMD)</option>
+<option value="MM - Wires" selected>MM - Wires</option>
+</select>
+
+<p> <input type ="submit" value="submit" /> </p>
+</form>
+</body>
+</html>
+
+    </div>
+</div>
+-->
+ 
+{% endblock %}
